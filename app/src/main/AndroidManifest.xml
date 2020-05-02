@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.cook">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.notifications.ui.PasswordActivity"></activity>
+        <activity android:name=".ui.ShowMainActivity" />
+        <activity android:name=".ui.ImgaActivity" />
+        <activity android:name=".ui.notifications.ui.MessageActivity" />
+        <activity android:name=".ui.notifications.ui.CookMenuActivity" />
+        <activity android:name=".ui.notifications.ui.MyCookCollectActivity" />
+        <activity android:name=".ui.dashboard.MyCollectActivity" />
+        <activity android:name=".ui.notifications.PersonMessageActivity" />
+        <activity android:name=".ui.home.ShowMenuCookActivity" />
+        <activity android:name=".ui.home.AddFoodActivity" />
+        <activity android:name=".ui.home.DinnerActivity" />
+        <activity android:name=".ui.home.LunchActivity" />
+        <activity android:name=".ui.home.BreakfastActivity" />
+        <activity android:name=".img.image.PhotoActivity" />
+        <activity
+            android:name=".ButtomActivity"
+            android:label="@string/title_activity_buttom" />
+        <activity android:name=".module.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".module.RegisterActivity" />
+        <activity android:name=".module.HomeActivity" />
+        <activity android:name=".module.MineActivity" />
+        <activity android:name=".module.ColloctActivity" />
+        <activity android:name=".module.MenuActivity" />
+        <activity android:name=".module.ChangenicknameActivity" />
+        <activity android:name=".module.ChangesculptureActivity" /> <!-- <activity android:name=".module.MainActivity"></activity> -->
+        <activity android:name=".module.RusumeActivity" />
+        <activity android:name=".ui.home.AddPhotoActivity" />
+
+    </application>
+
+</manifest>

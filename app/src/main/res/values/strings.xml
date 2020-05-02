@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">美味时间</string>
+    <string name="count">账号</string>
+    <string name="passWord">密码</string>
+    <string name="login">登录</string>
+    <string name="newCount">新用户，注册！</string>
+    <string name="register">注册</string>
+    <string name="sure">确定</string>
+    <string name="surePass">确定密码</string>
+    <string name="phoneNumber">手机号</string>
+    <string name="myCollect">收藏菜谱</string>
+    <string name="mine">我的菜谱</string>
+    <string name="personalCenter">个人中心</string>
+    <string name="establish">设置</string>
+    <string name="nickName">昵称</string>
+    <string name="change_nickName">修改昵称</string>
+    <string name="personalData">个人信息</string>
+    <string name="save">保存</string>
+    <string name="recommend">推荐</string>
+    <string name="collect">收藏</string>
+    <string name="sculpture">头像</string>
+    <string name="birthday">生日</string>
+    <string name="address">地区</string>
+    <string name="title_activity_buttom">ButtomActivity</string>
+    <string name="title_home">美食广场</string>
+    <string name="title_dashboard">收藏</string>
+    <string name="title_notifications">个人中心</string>
+
+    //menu imaginbuttom
+    <string name="imgbutton_breafast">早餐</string>
+    <string name="imgbuttom_luanch">中餐</string>
+    <string name="imgbuttom_dinner">晚餐</string>
+
+    //
+    <string name="menu_search">搜索</string>
+    <string name="menu_add">发布</string>
+    <string name="menu_refresh">更多</string>
+    //..................................cookmenushou
+    //showmenmucook 成绩
+    <string name="cookmenugrade">.综合评分</string>
+    <string name="cookmenucolled">.万收藏</string>
+    <string name="cookmenusee">.万浏览</string>
+
+    //hit
+    <string name="show_use_something">做法</string>
+
+    //效果
+    <string name="menu_step1">效果1-----点击添加</string>
+    <string name="menu_step2">效果2</string>
+    <string name="menu_step3">效果3</string>
+    <string name="menu_step4">效果4</string>
+    <string name="menu_step5">效果5</string>
+    <string name="menu_step6">效果6</string>
+    <!--    <string name="menu_step7">效果7</string>-->
+
+    <string name="spark">评论</string>
+    <string name="please_cook_name">请输入菜名</string>
+
+    //个人界面
+    <string name="intime">加入时间</string>
+    <string name="person_spaek">添加个人简介</string>
+    <string name="person_seeed">个人信息</string>
+    <string name="person_fans">粉丝</string>
+    <string name="person_kear">关注</string>
+
+    <string name="person_history">浏览历史</string>
+    <string name="person_money">钱包</string>
+    <string name="person_buy">订单</string>
+    <string name="person_study">课程</string>
+
+    <string name="person_cook">菜谱</string>
+    <string name="person_cook_other">作品</string>
+
+    <string name="person_long_Show">创建菜谱的人是厨房的天使</string>
+    <string name="person_long_Show_do">开始创造你的菜谱</string>
+    <string name="show_cook_type">类型</string>
+
+    //个人信息
+    <string name="res_hit">编辑个人信息</string>
+    <string name="res_name">用户名</string>
+    <string name="res_burth">出生日期</string>
+    <string name="res_telphone">手机号码</string>
+    <string name="res_e_mial">电子邮件</string>
+    <string name="res_address">所在地</string>
+    <string name="res_if_mary">职业</string>
+    <string name="res_politics">政治面貌</string>
+    <string name="res_bnt_confirm">职业</string>
+    <string name="res_person_message">个人简介</string>
+    <string name="person_confirm">提交</string>
+    <string name="person_icon">点击编辑头像</string>
+    <string name="person_xinxi">我的信息</string>
+    <string name="person_qiute">退出登录</string>
+    <string name="person_edit">编辑</string>
+
+    <string name="psw_edit_psw">修改密码</string>
+    <string name="psw_old_psw">旧密码</string>
+    <string name="psw_new_psw">新密码</string>
+    <string name="psw_confirm_psw">确认密码</string>
+    <string name="psw_confirm">提交</string>
+</resources>
