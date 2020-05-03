@@ -24,7 +24,9 @@ public class CookAdapter extends RecyclerView.Adapter<CookAdapter.MyViewHolder> 
     List<ShowCarEntity> allCooks = new ArrayList<>();
 
     public void setAllCooks(List<ShowCarEntity> allCooks) {
-        this.allCooks.clear();
+
+
+this.allCooks.clear();
         this.allCooks = allCooks;
         notifyDataSetChanged();
     }
@@ -35,7 +37,7 @@ public class CookAdapter extends RecyclerView.Adapter<CookAdapter.MyViewHolder> 
 
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        final View itemView = layoutInflater.from(parent.getContext()).inflate(R.layout.show_food_card1, parent, false);
+        final View itemView = layoutInflater.from(parent.getContext()).inflate(R.layout.show_food_card2, parent, false);
 //卡片点击事件
         final MyViewHolder holder = new MyViewHolder(itemView);
         holder.itemView.setOnClickListener(new View.OnClickListener() {

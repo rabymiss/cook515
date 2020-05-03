@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,7 +34,7 @@ public class BreakfastActivity extends AppCompatActivity {
 
     private void adpterlist() {
         recyclerView=findViewById(R.id.recycler_breakfast);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
         cookAdapter=new CookAdapter();
         alllist=cookViewModal.type("早餐");
         alllist.observe(this, new Observer<List<ShowCarEntity>>() {

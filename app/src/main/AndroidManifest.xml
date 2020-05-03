@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.notifications.ui.PasswordActivity"></activity>
+<!--        <activity android:name=".looper.LooperActivity"></activity>-->
+        <activity android:name=".ui.notifications.ui.PasswordActivity" />
         <activity android:name=".ui.ShowMainActivity" />
         <activity android:name=".ui.ImgaActivity" />
         <activity android:name=".ui.notifications.ui.MessageActivity" />
@@ -34,7 +35,7 @@
         <activity
             android:name=".ButtomActivity"
             android:label="@string/title_activity_buttom" />
-        <activity android:name=".module.LoginActivity">
+        <activity android:name=".looper.LooperActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -51,7 +52,6 @@
         <activity android:name=".module.ChangesculptureActivity" /> <!-- <activity android:name=".module.MainActivity"></activity> -->
         <activity android:name=".module.RusumeActivity" />
         <activity android:name=".ui.home.AddPhotoActivity" />
-
     </application>
 
 </manifest>

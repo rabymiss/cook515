@@ -21,8 +21,10 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import androidx.room.PrimaryKey;
 
 import com.example.cook.R;
@@ -70,17 +72,29 @@ public class HomeFragment extends Fragment {
 
 
         recyclerView = requireActivity().findViewById(R.id.recycle_food_home);
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity()));
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        layoutManager.setReverseLayout(true);
+        recyclerView.setLayoutManager(layoutManager);
+//        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
 
         cookAdapter = new CookAdapter();
 
         initView();
         initCilck();
 //搜索
+        //瀑布流
+        purecyccler();
 
         adapter();
         //滑动删除
         deletescroll();
+    }
+
+    private void purecyccler() {
+
+        StaggeredGridLayoutManager layoutManager=new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
+layoutManager.setReverseLayout(true);
+
     }
 
 
@@ -129,11 +143,12 @@ public class HomeFragment extends Fragment {
     private void adapter() {
         RecyclerView.ItemDecoration dividerItemDecoration = new DividerItemDecoration(requireActivity(), DividerItemDecoration.VERTICAL);
         alllist = cookViewModal.getAllCooksLive();
+
         alllist.observe(requireActivity(), new Observer<List<ShowCarEntity>>() {
             @Override
             public void onChanged(List<ShowCarEntity> showCarEntities) {
 
-                Log.d(TAG, showCarEntities.toString());
+
                 cookAdapter.setAllCooks(showCarEntities);
                 cookAdapter.notifyDataSetChanged();
             }

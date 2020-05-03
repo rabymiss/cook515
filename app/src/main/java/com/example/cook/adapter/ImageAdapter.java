@@ -39,7 +39,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.Myviewholder
       Glide.with(imageView.getContext()).load(imagEntity.getPath()).into(imageView);
 //  Picasso.get().load(imagEntity.getPath()).into(imageView);
 
-        Toast.makeText(holder.itemView.getContext(),list.get(position).getPath(),Toast.LENGTH_LONG).show();
+
     }
 
     @Override
