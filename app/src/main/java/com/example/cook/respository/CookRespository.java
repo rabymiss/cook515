@@ -27,6 +27,9 @@ LiveData<List<ShowCarEntity>>findonercookpattern(String pattern){
     LiveData<List<ShowCarEntity>> findCooksWithPattern(String patten) {
         return cookShowCardDao.findCookWithPattern("%" + patten + "%");
     }
+    LiveData<List<ShowCarEntity>> findtypett(String patten) {
+        return cookShowCardDao.findtype("%" + patten + "%");
+    }
  LiveData<List<ShowCarEntity>>type(String pattern){
         return cookShowCardDao.findzaoWithPattern(pattern);
  }

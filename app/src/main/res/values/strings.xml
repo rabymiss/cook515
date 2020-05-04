@@ -97,4 +97,6 @@
     <string name="psw_new_psw">新密码</string>
     <string name="psw_confirm_psw">确认密码</string>
     <string name="psw_confirm">提交</string>
+
+    <string name="add_type">请选择分类</string>
 </resources>

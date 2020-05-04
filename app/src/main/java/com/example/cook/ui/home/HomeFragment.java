@@ -1,7 +1,9 @@
 package com.example.cook.ui.home;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -10,12 +12,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.LongDef;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
@@ -26,12 +31,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import androidx.room.PrimaryKey;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.cook.R;
 import com.example.cook.adapter.CookAdapter;
 import com.example.cook.entity.show.ShowCarEntity;
+import com.example.cook.looper.LooperAdapter;
+import com.example.cook.looper.MyViewPager;
 import com.example.cook.respository.CookViewModal;
+import com.example.cook.views.PagerItem;
+import com.example.cook.views.SobLooperPager;
+import com.example.cook.views.SuperMainActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -43,13 +55,23 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment   {
     private static final String TAG = "HomeFragment";
     private ImageView imageViewVBreakFast, imageViewLaunch, imageViewDinner;
     private CookViewModal cookViewModal;
     private LiveData<List<ShowCarEntity>> alllist;
     private RecyclerView recyclerView;
     private CookAdapter cookAdapter;
+
+    //广告..........................
+
+    private SobLooperPager mLooperPager;
+
+    private List<PagerItem> mData = new ArrayList<>();
+
+
+
+
 
     public HomeFragment() {
 
@@ -65,6 +87,7 @@ public class HomeFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -77,7 +100,15 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 //        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
 
-        cookAdapter = new CookAdapter();
+        cookAdapter=new CookAdapter();
+
+        //广告
+        looper();
+
+        initData();
+        initViewlop();
+        initEvent();
+        
 
         initView();
         initCilck();
@@ -89,6 +120,84 @@ public class HomeFragment extends Fragment {
         //滑动删除
         deletescroll();
     }
+
+    private void initEvent() {if(mLooperPager != null) {
+        mLooperPager.setOnItemClickListener(new SobLooperPager.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Toast.makeText(getContext(),"点击了第" + (position + 1) + "个item", Toast.LENGTH_SHORT).show();
+                //todo:根据交互业务去实现具体逻辑
+            }
+        });
+    }
+
+    }
+
+    private void initViewlop() {
+    }
+
+    private void initData() {
+        mData.add(new PagerItem("第一个图片",R.mipmap.pic0));
+        mData.add(new PagerItem("第2个图片",R.mipmap.pic1));
+        mData.add(new PagerItem("第三个图片",R.mipmap.pic2));
+        mData.add(new PagerItem("第4个图片",R.mipmap.pic3));
+    }
+
+
+    private void looper() {
+
+        mLooperPager = requireActivity().findViewById(R.id.sob_looper_pager);
+        mLooperPager.setData(mInnerAdapter,new SobLooperPager.BindTitleListener() {
+            @Override
+            public String getTitle(int position) {
+                return mData.get(position).getTitle();
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        other();
+
+    }
+
+
+    private void other() {
+
+
+    }
+
+    private SobLooperPager.InnerAdapter mInnerAdapter = new SobLooperPager.InnerAdapter() {
+        @Override
+        protected int getDataSize() {
+            return mData.size();
+        }
+
+        @Override
+        protected View getSubView(ViewGroup container, int position) {
+            ImageView iv = new ImageView(container.getContext());
+            iv.setImageResource(mData.get(position).getPicResId());
+            iv.setScaleType(ImageView.ScaleType.FIT_XY);
+            return iv;
+        }
+    };
+
+
+    //...........looper..............................
 
     private void purecyccler() {
 
@@ -190,7 +299,6 @@ layoutManager.setReverseLayout(true);
 
     }
 
-//按钮
 
 
 }

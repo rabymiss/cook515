@@ -35,4 +35,6 @@ public interface CookShowCardDao {
     LiveData<List<ShowCarEntity>> findCookWithPattern(String pattern);
     @Query("SELECT * FROM ShowCarEntity WHERE  username LIKE :pattern ORDER BY ID DESC")
     LiveData<List<ShowCarEntity>> findCookusernamePattern(String pattern);
+    @Query("SELECT * FROM ShowCarEntity WHERE  t1 LIKE :pattern ORDER BY ID DESC")
+    LiveData<List<ShowCarEntity>> findtype(String pattern);
 }

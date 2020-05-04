@@ -1,6 +1,7 @@
 package com.example.cook.apientity;
 
 public class Showcard {
+
     public int getId() {
         return id;
     }
@@ -65,6 +66,14 @@ public class Showcard {
         this.image = image;
     }
 
+    public String getT1() {
+        return t1;
+    }
+
+    public void setT1(String t1) {
+        this.t1 = t1;
+    }
+
     private int id;
     //............................
 
@@ -75,4 +84,5 @@ public class Showcard {
     private String stepImage1;
     private String cookType;
     private String image;
+    private String t1;
 }

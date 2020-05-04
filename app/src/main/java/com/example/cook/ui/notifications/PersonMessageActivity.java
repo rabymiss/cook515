@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.cook.ButtomActivity;
 import com.example.cook.R;
 import com.example.cook.api.Api;
 import com.example.cook.apientity.PersonMessage;
@@ -202,10 +203,10 @@ imageViewIcon=findViewById(R.id.imageView_pco);
                     @Override
                     public void onResponse(Call<PersonMessage> call, Response<PersonMessage> response) {
 
-                            System.out.println("-------------------"+response.code());
+
                         Toast.makeText(getApplicationContext(), "保存成功", Toast.LENGTH_SHORT).show();
-
-
+                        Intent intent=new Intent(PersonMessageActivity.this, MessageActivity.class);
+                      startActivity(intent);
                     }
 
                     @Override
@@ -221,7 +222,7 @@ imageViewIcon=findViewById(R.id.imageView_pco);
                 editor.commit();
 
 
-                Intent intent=new Intent(PersonMessageActivity.this,NotificationsFragment.class);
+
 
 
 

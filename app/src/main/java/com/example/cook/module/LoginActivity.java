@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
     final String ACCOUNT_PREF = "account";
     final String PASSWORD_PREF = "password";
     private UserViewmodel userViewmodel;
-    private List<ShowCarEntity[]> dataBeans;
+
 //   private     FindCook findCook;
     private CookViewModal cookViewModal;
     List<FindCook.DataBean>dataBeanList=new ArrayList<>();
@@ -111,13 +111,6 @@ public class LoginActivity extends AppCompatActivity {
                 final String account = textViewAccount.getText().toString().trim();
                 final String password = textViewPassword.getText().toString().trim();
 
-
-
-
-//        Intent intent = new Intent();
-//        intent.setAction("ACCOUNT");//用隐式意图来启动广播
-//        intent.putExtra("account", account);
-//        LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
 
 
 
@@ -185,25 +178,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-//        listLiveDataMy=cookViewModal.getUsercook(username);
-
-//        listLiveDataMy.observe(this, new Observer<List<ShowCarEntity>>() {
-//            @Override
-//            public void onChanged(List<ShowCarEntity> showCarEntities) {
-//                myCookViewModel.deleteAllCooks();
-//                for (ShowCarEntity showCarEntity:showCarEntities){
-//                    MyCookEntity myCookEntity=new MyCookEntity();
-//                    myCookEntity.setTitle(showCarEntity.getTitle());
-//                    myCookEntity.setAuthorName(showCarEntity.getUsername());
-//                    myCookEntity.setImageIcon(showCarEntity.getUserIcon());
-//                    myCookViewModel.insertCooks(myCookEntity);
-//
-//                }
-//            }
-//        });
-
-
-
 
             }
         });
@@ -242,20 +216,31 @@ task.enqueue(new Callback<FindCook>() {
     @Override
     public void onResponse(Call<FindCook> call, Response<FindCook> response) {
 
-    FindCook   findCook=response.body();
-        dataBeanList.addAll(findCook.getData());
-        for (FindCook.DataBean dataBean:dataBeanList){
 
-            ShowCarEntity showCarEntity=new ShowCarEntity();
-            showCarEntity.setCookType(dataBean.getCookType());
-            showCarEntity.setEndImage(dataBean.getImage());
-            showCarEntity.setStep(dataBean.getStepImage1());
-            showCarEntity.setCookName(dataBean.getCookName());
-            showCarEntity.setCookName(dataBean.getTitle());
-            showCarEntity.setTitle(dataBean.getTitle());
-            showCarEntity.setUsername(dataBean.getUsername());
-             cookViewModal.deleteAllCooks();
-             cookViewModal.insertCooks(showCarEntity);
+    FindCook   findCook=response.body();
+    dataBeanList.addAll(findCook.getData());
+    for (FindCook.DataBean dataBean:dataBeanList){
+
+        ShowCarEntity showCarEntity=new ShowCarEntity();
+        showCarEntity.setCookType(dataBean.getCookType());
+        showCarEntity.setEndImage(dataBean.getImage());
+        showCarEntity.setStep(dataBean.getStepImage1());
+        showCarEntity.setCookName(dataBean.getCookName());
+        showCarEntity.setCookName(dataBean.getTitle());
+        showCarEntity.setTitle(dataBean.getTitle());
+        showCarEntity.setUsername(dataBean.getUsername());
+       showCarEntity.setT1(dataBean.getT1());
+        cookViewModal.deleteAllCooks();
+        cookViewModal.insertCooks(showCarEntity);
+
+
+
+
+
+
+
+
+
 
 
           //  cookViewModal.insertCooks( );
@@ -263,7 +248,7 @@ task.enqueue(new Callback<FindCook>() {
 
 
         }
-addcook1();
+
 
 
 
@@ -280,11 +265,6 @@ addcook1();
 
     }
 
-    private void addcook1() {
 
-
-
-
-    }
 }
 

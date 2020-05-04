@@ -6,15 +6,12 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,14 +21,11 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import com.alibaba.fastjson.JSON;
 import com.example.cook.R;
 import com.example.cook.api.Api;
-import com.example.cook.apientity.FindCook;
 import com.example.cook.apientity.PersonMessage;
 import com.example.cook.entity.MyCookEntity;
 import com.example.cook.entity.RegisterEntity;
-import com.example.cook.module.LoginActivity;
 import com.example.cook.respository.MyCookViewModel;
 import com.example.cook.respository.UserViewmodel;
 import com.example.cook.ui.home.AddFoodActivity;
@@ -51,9 +45,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
-import static android.view.View.resolveSize;
-import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class NotificationsFragment extends Fragment {
     private TextView textbcook, textedit, textmymessage,showyou,textusernme,nickname1;

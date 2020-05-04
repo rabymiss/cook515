@@ -23,6 +23,10 @@ public class CookViewModal extends AndroidViewModel {
 public LiveData<List<ShowCarEntity>> getUsercook(String pattern){
         return cookRespository.findonercookpattern(pattern);
 }
+    public LiveData<List<ShowCarEntity>> findtypett(String pattern){
+        return cookRespository.findtypett(pattern);
+    }
+
 public LiveData<List<ShowCarEntity>> type(String pattern){
         return cookRespository.type(pattern);
 }

@@ -90,7 +90,10 @@ public class ShowMenuCookActivity extends AppCompatActivity {
                     listall.add(showCarEntity.getEndImage());
                     Picasso.get().load("http://172.20.10.3:8080/"+showCarEntity.getEndImage()).into(cookend);                }
                 SharedPreferences.Editor editor=getSharedPreferences(TEMP_INFO, Context.MODE_PRIVATE).edit();
-                editor.putString("url",listall.get(0));
+                if (listall.size()!=0){
+                    editor.putString("url",listall.get(0));
+                }
+
                 editor.apply();
 
             }

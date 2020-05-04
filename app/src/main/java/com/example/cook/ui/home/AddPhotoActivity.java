@@ -31,7 +31,6 @@ import com.example.cook.api.Api;
 import com.example.cook.entity.RegisterEntity;
 import com.example.cook.img.image.BaseActivity;
 import com.example.cook.respository.UserViewmodel;
-import com.example.cook.ui.notifications.PersonMessageActivity;
 
 import java.io.File;
 import java.io.FileNotFoundException;
